@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>MEMORIA</title>
     <style>
         :root {
             --white: #FFFFFF;
@@ -15,14 +16,80 @@
             --very-light-pink: #C7C7C7;
             --text-input-field: #F7F7F7;
             --hospital-green: #ACD9B2;
+            --w: calc(70vw / 6);
+            --h: calc(70vh / 4);
+            
 
+        }
+        
+        *{
+            transition: all 0.5s;
         }
         body {
             font-family: 'Quicksand', sans-serif;
+            padding: 0;
+            margin: 0;
+            -webkit-perspective: 1000;
+            background: var(--hospital-green);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .div{
+            display: inline-block;
+        }
+        .area-tarjeta,
+        .tarjeta 
+        .cara{
+            width: var(--w);
+            height: var(--h);
+            min-width: 80px;
+        }
+        .tarjeta{
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .area-tarjeta:hover .tarjeta{
+            transform: rotateY(180deg);
+        }
+        .cara{
+            position: absolute;
+            backface-visibility: hidden;
+            box-shadow: inset 0 0 0 5px white ;
+            font-size: 500%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .trasera{
+            background-color: rgb(28, 235, 235);
+            transform: rotateY(180deg);
+        }
+        .superior{
+            background: linear-gradient(rgba(235, 159, 18, 0.904),darkorange);
+        }
+        .nuevoJuego{
+            background: linear-gradient(rgba(235, 159, 18, 0.904),darkorange);
+            padding: 20px;
+            border-radius: 20px;
+            border: white 4px solid;
         }
     </style>
 </head>
 <body>
-    <h1>MI Primera Pagina</H1>
+    <!-- <h1>MI Primera Pagina</H1> -->
+        <div id="tablero">
+            <div class="area-tarjeta">
+                <div class="tarjeta">
+                    <div class="cara trasera"><i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="cara superior"><i class="fa-solid fa-question"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="nuevoJuego">Nuevo Juego</div>
 </body>
 </html>
